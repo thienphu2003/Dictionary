@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<label>Nhập từ:</label>
+<input id="input1" type="text" name="englishWord">
+<button id="translate" name="translate" onclick="translatefunction()">Dịch</button>
+<p id="result"></p>
+<p id="result2"></p>
+</body>
+<script>
+let array1=["banana", "apple", "orange", "pen", "pencil", "book"];
+let array2=["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+function translatefunction()
+{
+    let receive= document.getElementById("input1").value;
+    let count=0;
+    for(let i=0;i < array1.length;i++)
+    {
+        if(receive===array1[i])
+        {
+            let d=array2[i];
+            document.getElementById("result").innerHTML=d;
+            break;
+        }
+    }
+    for( let j=0; j< array1.length;j++){
+        if(receive!==array1[j])
+        {
+            count++;
+        }
+    }
+    if( count===array1.length)
+    {
+        document.getElementById("result2").innerHTML="Not Found !";
+    }
+
+
+}
+</script>
+</html>
